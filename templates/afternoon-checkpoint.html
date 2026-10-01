@@ -1,0 +1,88 @@
+<!doctype html>
+<!-- TipTop briefing template. Copy this file exactly; replace only the example text (all names and numbers below are fictional). -->
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Afternoon Checkpoint</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf8f4;--card:#fff;--ink:#1c1b19;--mute:#6b675f;--line:#e2dccf;--acc:#2f5d50;--accbg:#e8f0ec;--red:#b42318;--redbg:#fdf1ef;--amb:#8a4b08;--ambbg:#fff6e5;--grn:#067647;--grnbg:#ebf7f0}
+@media screen and (prefers-color-scheme:dark){:root{--bg:#141412;--card:#1d1c1a;--ink:#f1eee8;--mute:#a09b90;--line:#34322d;--acc:#7cc3ae;--accbg:#1b2a25;--red:#f97066;--redbg:#2b1715;--amb:#fdb022;--ambbg:#2a2010;--grn:#47cd89;--grnbg:#10231a}}
+*{box-sizing:border-box}
+html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 Inter,system-ui,sans-serif}
+.w{max-width:840px;margin:0 auto;padding:40px 20px 64px}
+.eye,.mono{font:500 12px 'JetBrains Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
+h1{font:600 36px/1.12 Fraunces,Georgia,serif;letter-spacing:-.01em;margin:10px 0 12px}
+.stand{color:var(--mute);margin:0 0 26px;max-width:660px;font-size:16px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:2px solid var(--ink);border-bottom:1px solid var(--line)}
+.st{padding:14px 14px 12px;border-right:1px solid var(--line)}.st:last-child{border-right:0}
+.st b{display:block;font:600 38px/1 Fraunces,Georgia,serif;margin-bottom:6px}
+.st span{font:500 11px 'JetBrains Mono',monospace;letter-spacing:.06em;text-transform:uppercase;color:var(--mute)}
+.st.r b{color:var(--red)}.st.a b{color:var(--amb)}.st.g b{color:var(--grn)}
+section{margin-top:38px}
+h2{display:flex;justify-content:space-between;align-items:baseline;font:500 12px 'JetBrains Mono',monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);border-top:2px solid var(--ink);padding-top:10px;margin:0 0 16px}
+h2 small{font:inherit;letter-spacing:.04em;text-transform:none}
+.tl{position:relative;height:78px;border-bottom:1px solid var(--line);background:repeating-linear-gradient(90deg,var(--line) 0 1px,transparent 1px 6.25%)}
+.tl .b{position:absolute;top:10px;height:30px;min-width:8px;border-radius:6px;background:var(--acc)}
+.tl .b span{position:absolute;top:36px;left:0;font:500 11px 'JetBrains Mono',monospace;color:var(--ink);white-space:nowrap}
+.tl .b.lo span{top:52px}
+.tl.short{height:34px}
+.tl .past{position:absolute;top:0;bottom:0;left:0;background:repeating-linear-gradient(135deg,var(--line) 0 1.5px,transparent 1.5px 7px)}
+.tl .b.hold{background:transparent;border:1.5px dashed var(--acc)}
+.tl .now{position:absolute;top:0;bottom:0;border-left:2px solid var(--red)}
+.hrs{display:flex;justify-content:space-between;font:400 10px 'JetBrains Mono',monospace;color:var(--mute);margin:5px 0 14px}
+.ag{display:grid;grid-template-columns:118px 1fr;gap:4px 16px;padding:10px 0;border-bottom:1px solid var(--line);break-inside:avoid}
+.ag .t{font:500 13px 'JetBrains Mono',monospace}.ag b{font-weight:600}.ag p{margin:2px 0 0;color:var(--mute);font-size:14px}
+.stale{background:var(--redbg);border:1px solid var(--red);border-radius:14px;padding:16px 18px 8px;margin-top:38px;break-inside:avoid}
+.stale h2{color:var(--red);border-top:0;padding-top:0;margin-bottom:12px}
+.card{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--line);border-radius:10px;padding:14px 16px;margin:0 0 10px;break-inside:avoid}
+.card.r{border-left-color:var(--red)}.card.a{border-left-color:var(--amb)}.card.g{border-left-color:var(--grn)}
+.card h3{font:600 18px/1.3 Fraunces,Georgia,serif;margin:6px 0 4px}
+.card p{margin:0;color:var(--mute);font-size:14px}.card p+p{margin-top:6px}
+.card .where{font:400 12px 'JetBrains Mono',monospace;color:var(--mute);margin-top:8px}
+.pill{display:inline-block;font:500 10.5px 'JetBrains Mono',monospace;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:99px;background:var(--accbg);color:var(--acc)}
+.pill.r{background:var(--redbg);color:var(--red)}.pill.a{background:var(--ambbg);color:var(--amb)}.pill.g{background:var(--grnbg);color:var(--grn)}
+.card .pill.r{border:1px solid var(--red)}
+.qw{list-style:none;margin:0;padding:0}
+.qw li{display:grid;grid-template-columns:22px 1fr;gap:10px;padding:10px 0;border-bottom:1px solid var(--line);break-inside:avoid}
+.qw li:before{content:"";width:16px;height:16px;margin-top:3px;border:1.5px solid var(--mute);border-radius:4px}
+.qw b{font-weight:600}.qw span{color:var(--mute)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{font:500 11px 'JetBrains Mono',monospace;letter-spacing:.06em;text-transform:uppercase;color:var(--mute);text-align:left;padding:0 10px 8px 0;border-bottom:1px solid var(--ink)}
+td{padding:10px 10px 10px 0;border-bottom:1px solid var(--line);vertical-align:top}td:first-child{font-weight:600;white-space:nowrap}
+tr{break-inside:avoid}
+.src{font:400 11.5px/1.5 'JetBrains Mono',monospace;color:var(--mute);margin:10px 0 0}
+a{color:var(--acc)}
+@media (max-width:620px){h1{font-size:27px}.stats{grid-template-columns:repeat(2,1fr)}.st:nth-child(2){border-right:0}.st:nth-child(-n+2){border-bottom:1px solid var(--line)}.ag{grid-template-columns:1fr}.tl .b{font-size:9px}}
+@media print{@page{size:letter;margin:12mm 12mm}body{background:#fff;font-size:11.5px;line-height:1.45}.w{max-width:none;padding:0}h1{font-size:25px;margin:6px 0 8px}.stand{font-size:13px;margin-bottom:16px}.st{padding:10px 12px 8px}.st b{font-size:26px}section{margin-top:20px}.stale{margin-top:20px;padding:12px 14px 4px}.card{padding:10px 12px;margin-bottom:8px}.card h3{font-size:15px}.card p,.ag p{font-size:12px}.ag{padding:7px 0}.qw li{padding:7px 0}td{padding:7px 8px 7px 0}.src{font-size:10px}h2{break-after:avoid}.card,.ag,.qw li,tr{break-inside:avoid}}
+</style><style>.chg{list-style:none;margin:0;padding:0}.chg li{display:grid;grid-template-columns:22px 1fr;gap:10px;padding:10px 0;border-bottom:1px solid var(--line);break-inside:avoid}.chg li:before{content:"✓";color:var(--grn);font-weight:700}.chg b{font-weight:600}.chg span{color:var(--mute)}.quiet{background:var(--grnbg);border:1px solid var(--grn);border-radius:14px;padding:14px 18px;color:var(--grn);font-weight:500}</style></head><body><div class="w">
+<div class="eye">Afternoon Checkpoint · Wednesday, September 30, 2026 · 3:00 PM Central</div>
+<h1>No meetings left. Three bills are the only things that need Nick before tomorrow.</h1>
+<p class="stand">Two invoices are past due with no payment confirmation, and a $300 approval is due tomorrow. Mossgate closed out this afternoon.</p>
+<div class="stats" style="grid-template-columns:repeat(3,1fr)">
+<div class="st r"><b>3</b><span>Act before EOD</span></div>
+<div class="st g"><b>1</b><span>Changed since AM</span></div>
+<div class="st"><b>0</b><span>Meetings left</span></div>
+</div>
+<p class="src">Going-stale sweep: whole mailbox, 21 days. Spam not checked. Nick's personal inbox is not readable from here.</p>
+<section>
+<h2>Rest of today <small>Central time · now 3:00 PM</small></h2>
+<div class="tl short"><div class="past" style="width:56.25%"></div><div class="now" style="left:56.25%"></div></div>
+<div class="hrs"><span>6a</span><span>8a</span><span>10a</span><span>12p</span><span>2p</span><span>4p</span><span>6p</span><span>8p</span><span>10p</span></div>
+<p class="stand" style="margin:0">Nothing accepted for the rest of the day. Three unanswered invites are treated as declined.</p>
+</section>
+<section>
+<h2>Changed since this morning <small>1</small></h2>
+<ul class="chg"><li><div><b>Mossgate is closed out.</b> <span>Nick sent the signed statement and confirmed the new bank details; Ari replied "Much appreciated."</span></div></li></ul>
+</section>
+<div class="stale">
+<h2>Going stale — could cost money <small>3 items</small></h2>
+<div class="card r"><span class="pill r">Day 26 past due</span><h3>Northwind invoice NW-1042 — $4,200.00</h3><p>"Past due" notice Sep 19, asking for payment details "to avoid any impact to your service". Nothing confirms payment.</p><p class="where">Inbox · Northwind label · <a href="#">Open in Gmail</a></p></div>
+<div class="card r"><span class="pill r">3rd reminder</span><h3>Brightline invoice 318 — $1,500</h3><p>QuickBooks reminders Sep 14, 18 and 20. No reply, no receipt.</p><p class="where">"4: notification" · unread · <a href="#">Open in Gmail</a></p></div>
+<div class="card a"><span class="pill a">Due Oct 1</span><h3>Approve the Coastline Coaching bill in Bill.com — $300</h3><p>The fund admin said it would process it this week; Nick's approval is the blocker.</p><p class="where">"4: notification" · unread · <a href="#">Open in Gmail</a></p></div>
+</div>
+<section>
+<h2>Act before end of day <small>1</small></h2>
+<div class="card r"><span class="pill r">New since 6 AM</span><h3>Girder AI wants to know about a follow-on</h3><p>Priya Nair, 1:40 PM: the round is priced and closes Friday. Only the out-of-office has gone back.</p><p class="where">Inbox · <a href="#">Open in Gmail</a></p></div>
+</section>
+
+</div></body></html>
